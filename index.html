@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>SCC SPIN & WIN CHALLENGE</title>
+  <meta name="theme-color" content="#0677d8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" id="app">
+    <section class="world" aria-hidden="true">
+      <div class="sky sky-day"></div>
+      <div class="sky sky-night"></div>
+      <div class="stars"></div>
+      <div class="sun-or-moon sun"></div>
+      <div class="sun-or-moon moon"></div>
+      <div class="cloud cloud-a"></div>
+      <div class="cloud cloud-b"></div>
+      <div class="cloud cloud-c"></div>
+      <div class="mountain mountain-a"></div>
+      <div class="mountain mountain-b"></div>
+      <div class="mountain mountain-c"></div>
+      <div class="hill hill-yellow"></div>
+      <div class="hill hill-green"></div>
+      <div class="hill hill-blue"></div>
+      <div class="tree tree-left"></div>
+      <div class="tree tree-right"></div>
+      <div class="bush bush-a"></div>
+      <div class="bush bush-b"></div>
+      <div class="grass-strip"></div>
+      <div class="soil"></div>
+    </section>
+
+    <header class="main-header">
+      <img src="assets/images/sabahcredit-logo.png" alt="Sabah Credit Corporation" class="official-logo">
+      <div class="title-stack">
+        <h1><span>SCC SPIN & WIN</span><em>CHALLENGE</em></h1>
+        <p>SPIN, WIN & BE REWARDED!</p>
+      </div>
+    </header>
+
+    <section class="scene" id="scene">
+      <aside class="register-panel" id="registerPanel">
+        <div class="panel-icon">●</div>
+        <h2>REGISTER TO PARTICIPATE</h2>
+        <form id="registerForm" autocomplete="off">
+          <label>Full Name (as per IC)
+            <input id="playerName" type="text" placeholder="Enter full name" required>
+          </label>
+          <label>Organisation / Department
+            <input id="organisation" type="text" placeholder="e.g. School / Hospital / Department" required>
+          </label>
+          <label>Mobile Number
+            <input id="mobileNumber" type="tel" inputmode="tel" placeholder="e.g. 0198417064" required>
+          </label>
+          <label class="consent-box">
+            <input id="consentCheck" type="checkbox" required>
+            <span>I hereby consent to Sabah Credit Corporation collecting, processing, and using my personal data for the purpose of administering and managing my participation in the SCC SPIN & WIN CHALLENGE. I further consent to the use of photographs, videos, and other recordings taken during the event for publicity, promotional, and marketing purposes. I also agree to receive future updates, promotional materials, marketing campaigns, products, services, and invitations to events organised by Sabah Credit Corporation.</span>
+          </label>
+          <button class="start-btn" type="submit">START CHALLENGE <b>›</b></button>
+        </form>
+      </aside>
+
+      <section class="wheel-stage" id="wheelStage" aria-label="Spin and win wheel">
+        <div class="pointer" id="pointer"><span></span></div>
+        <div class="wheel-machine" id="wheelMachine">
+          <canvas id="wheelCanvas" width="1400" height="1400"></canvas>
+          <button id="spinButton" class="spin-button" type="button"><span>SPIN</span></button>
+        </div>
+        <button id="bigSpinButton" class="machine-spin" type="button">SPIN</button>
+      </section>
+
+      <aside class="how-card" id="howCard">
+        <h2>HOW TO PLAY</h2>
+        <ol>
+          <li><b>1</b><span>Register your details.</span></li>
+          <li><b>2</b><span>Click the SPIN button.</span></li>
+          <li><b>3</b><span>Wait for the wheel to stop.</span></li>
+          <li><b>4</b><span>See what prize you won!</span></li>
+        </ol>
+      </aside>
+
+      <div class="speech">GOOD LUCK<br>& HAVE FUN!</div>
+    </section>
+
+    <section class="mascots" aria-hidden="true">
+      <img src="assets/images/kladee.webp" class="mascot kladee" alt="">
+      <img src="assets/images/bob.webp" class="mascot bob" alt="">
+      <img src="assets/images/ejau.webp" class="mascot ejau" alt="">
+      <img src="assets/images/malia.png" class="mascot malia" alt="">
+      <img src="assets/images/malio.webp" class="mascot malio" alt="">
+    </section>
+
+    <section class="winner-overlay hidden" id="winnerOverlay" role="dialog" aria-modal="true">
+      <div class="winner-card">
+        <img src="assets/images/malia.png" alt="Mascot" id="winnerMascot">
+        <p>CONGRATULATIONS!</p>
+        <h2>YOU ARE A WINNER!</h2>
+        <div class="prize-name" id="winnerPrize">YONO</div>
+        <small id="winnerText"></small>
+        <div class="winner-actions">
+          <button id="awesomeButton" class="start-btn" type="button">AWESOME</button>
+          <button id="retryButton" class="retry-btn" type="button">RETRY</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="loading-overlay hidden" id="loadingOverlay">
+      <div class="loading-card">
+        <img src="assets/images/sabahcredit-logo.png" alt="">
+        <strong>Registration Successful</strong>
+        <span>Preparing your challenge...</span>
+      </div>
+    </section>
+
+    <canvas id="fxCanvas" class="fx-canvas"></canvas>
+
+    <div class="tiny-tools" aria-label="Admin tools">
+      <button id="musicToggle" title="Toggle music" type="button">♪</button>
+      <button id="exportCsv" title="Export CSV" type="button">csv</button>
+      <button id="resetData" title="Reset saved data" type="button">reset</button>
+    </div>
+
+    <footer>© 2026 Sabah Credit Corporation. All Rights Reserved.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
